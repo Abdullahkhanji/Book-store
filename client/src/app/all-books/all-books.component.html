@@ -1,0 +1,64 @@
+<section style="margin-top: 12rem">
+  <h1 class="text-center mb-5">
+    <span class="border py-2 px-5 rounded">all books</span>
+  </h1>
+
+  <div class="d-flex justify-content-between">
+    <form
+      action=""
+      class="w-50 h-25 border rounded overflow-hidden d-flex align-items-center bg-white"
+    >
+      <input
+        class="h4 p-3 h-100 w-100"
+        type="search"
+        name=""
+        placeholder="search for your favorite book ... "
+        id="search-box"
+      />
+      <div id="search-btn" class="fa fa-search h1 me-4 pe-auto"></div>
+    </form>
+
+    <div style="margin-right: 100px;">
+        <button
+        class="bg-white"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+      >
+      <i class="fa fa-sort h1 pe-auto"></i>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <!-- <mat-icon>dialpad</mat-icon> -->
+          <span>favorite count</span>
+        </button>
+        <button mat-menu-item>
+          <!-- <mat-icon>voicemail</mat-icon> -->
+          <span>download count</span>
+        </button>
+        <button mat-menu-item>
+          <!-- <mat-icon>notifications_off</mat-icon> -->
+          <span>release date</span>
+        </button>
+      </mat-menu>
+    </div>
+
+
+  </div>
+
+  <div class="d-flex flex-wrap">
+    <div *ngFor="let book of booksList" routerLink="/bookView/:{{book.id}}" class="book-box me-5">
+      <div class="icons">
+        <div href="#" class="fa fa-download h1 py-2 px-3"></div>
+        <div href="#" class="fa fa-heart h1 py-2 px-3"></div>
+        <div href="#" class="fa fa-eye h1 py-2 px-3"></div>
+      </div>
+      <div class="image p-2">
+        <img style="height: 25rem" src="./assets/image/book-1.png" alt="" />
+      </div>
+      <div class="content">
+        <h3>{{ book.name }}</h3>
+        <a href="#" class="btn">view book</a>
+      </div>
+    </div>
+  </div>
+</section>

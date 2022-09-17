@@ -1,0 +1,264 @@
+<section style="margin-top: 12rem">
+  <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-4 border-end">
+        <div class="d-flex flex-column align-items-center text-center p-3">
+          <img
+            class="rounded-circle"
+            width="200px"
+            src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+          /><span class="font-weight-bold">Abdullah khanji</span
+          ><span class="text-black-50">abdullah206khan@gmail.com</span
+          ><span> </span>
+        </div>
+      </div>
+
+      <div class="container col-md-8 border-start px-5">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button
+            class="nav-link active text-success"
+            id="nav-home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-home"
+            type="button"
+            role="tab"
+            aria-controls="nav-home"
+            aria-selected="true"
+          >
+            profile
+          </button>
+          <button
+            class="nav-link text-success"
+            id="nav-profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-profile"
+            type="button"
+            role="tab"
+            aria-controls="nav-profile"
+            aria-selected="false"
+          >
+            your books
+          </button>
+        </div>
+
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="nav-home"
+            role="tabpanel"
+            aria-labelledby="nav-home-tab"
+          >
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <label>Name</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  placeholder="first name"
+                  value=""
+                />
+              </div>
+              <div class="col-md-6">
+                <label>Surname</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  value=""
+                  placeholder="surname"
+                />
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <label class="labels">Mobile Number</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  placeholder="enter phone number"
+                  value=""
+                />
+              </div>
+              <div class="col-md-12">
+                <label class="labels">Address Line 1</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  placeholder="enter address line 1"
+                  value=""
+                />
+              </div>
+              <div class="col-md-12">
+                <label class="labels">State</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  placeholder="enter address line 2"
+                  value=""
+                />
+              </div>
+              <div class="col-md-12">
+                <label class="labels">Area</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  placeholder="enter address line 2"
+                  value=""
+                />
+              </div>
+              <div class="col-md-12">
+                <label class="labels">Education</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  placeholder="education"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <label class="labels">Country</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  placeholder="country"
+                  value=""
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="labels">State/Region</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  value=""
+                  placeholder="state"
+                />
+              </div>
+            </div>
+            <div class="mt-5">
+              <button class="btn" type="button">Save Profile</button>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-profile"
+            role="tabpanel"
+            aria-labelledby="nav-profile-tab"
+          >
+            <div class="text-end">
+              <a routerLink="addBook" class="btn">Add book</a>
+            </div>
+
+            <div class="d-flex flex-wrap">
+              <div class="book-box me-4">
+                <div class="icons">
+                  <div href="#" class="fa fa-download h1 py-2 px-3"></div>
+                  <div href="#" class="fa fa-eye h1 py-2 px-3"></div>
+                </div>
+                <div class="image p-2">
+                  <img
+                    style="height: 25rem"
+                    src="./assets/image/book-1.png"
+                    alt=""
+                  />
+                </div>
+                <div class="content">
+                  <h3>book name</h3>
+                  <a href="#" class="btn">remove</a>
+                </div>
+              </div>
+
+              <div class="book-box me-4">
+                <div class="icons">
+                  <div href="#" class="fa fa-download h1 py-2 px-3"></div>
+                  <div href="#" class="fa fa-eye h1 py-2 px-3"></div>
+                </div>
+                <div class="image p-2">
+                  <img
+                    style="height: 25rem"
+                    src="./assets/image/book-2.png"
+                    alt=""
+                  />
+                </div>
+                <div class="content">
+                  <h3>book name</h3>
+                  <a href="#" class="btn">remove</a>
+                </div>
+              </div>
+
+              <div class="book-box me-4">
+                <div class="icons">
+                  <div href="#" class="fa fa-download h1 py-2 px-3"></div>
+                  <div href="#" class="fa fa-eye h1 py-2 px-3"></div>
+                </div>
+                <div class="image p-2">
+                  <img
+                    style="height: 25rem"
+                    src="./assets/image/book-3.png"
+                    alt=""
+                  />
+                </div>
+                <div class="content">
+                  <h3>book name</h3>
+                  <a href="#" class="btn">remove</a>
+                </div>
+              </div>
+
+              <div class="book-box me-4">
+                <div class="icons">
+                  <div href="#" class="fa fa-download h1 py-2 px-3"></div>
+                  <div href="#" class="fa fa-eye h1 py-2 px-3"></div>
+                </div>
+                <div class="image p-2">
+                  <img
+                    style="height: 25rem"
+                    src="./assets/image/book-4.png"
+                    alt=""
+                  />
+                </div>
+                <div class="content">
+                  <h3>book name</h3>
+                  <a href="#" class="btn">remove</a>
+                </div>
+              </div>
+              <div class="book-box me-4">
+                <div class="icons">
+                  <div href="#" class="fa fa-download h1 py-2 px-3"></div>
+                  <div href="#" class="fa fa-eye h1 py-2 px-3"></div>
+                </div>
+                <div class="image p-2">
+                  <img
+                    style="height: 25rem"
+                    src="./assets/image/book-5.png"
+                    alt=""
+                  />
+                </div>
+                <div class="content">
+                  <h3>book name</h3>
+                  <a href="#" class="btn">remove</a>
+                </div>
+              </div>
+              <div class="book-box me-4">
+                <div class="icons">
+                  <div href="#" class="fa fa-download h1 py-2 px-3"></div>
+                  <div href="#" class="fa fa-eye h1 py-2 px-3"></div>
+                </div>
+                <div class="image p-2">
+                  <img
+                    style="height: 25rem"
+                    src="./assets/image/book-4.png"
+                    alt=""
+                  />
+                </div>
+                <div class="content">
+                  <h3>book name</h3>
+                  <a href="#" class="btn">remove</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

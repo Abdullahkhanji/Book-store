@@ -1,0 +1,36 @@
+<section class="product" style="margin-top: 15rem">
+  <div *ngFor="let book of data" class="row">
+    <div class="col mw-100">
+      <img
+        class="border border-success rounded"
+        src="./assets/image/book-1.png"
+        alt=""
+      />
+    </div>
+    <div class="col mt-5">
+      <h1 style="font-size: 50px">{{ book.name }}</h1>
+      <h2 class="px-5 py-3">
+        author: <span class="text-secondary">{{ book.author }}</span>
+      </h2>
+      <h2 class="px-5 py-3">
+        Publisher: <span class="text-secondary">{{ book.publisher }}</span>
+      </h2>
+      <h2 class="px-5 py-3">
+        Publication date: <span class="text-secondary">{{ book.publicationDate }}</span>
+      </h2>
+      <h2 class="px-5 py-3">
+        page count: <span class="text-secondary">{{ book.pageCount }}</span>
+      </h2>
+      <h2 class="px-5 py-3">
+        <span class="text-secondary h4"
+          >{{ book.description }}</span
+        >
+      </h2>
+
+      <div class="mt-5">
+        <button class="btn me-5 my-5">Download book</button>
+        <button class="btn my-5">view book</button>
+      </div>
+    </div>
+  </div>
+</section>
