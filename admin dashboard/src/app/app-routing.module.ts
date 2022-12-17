@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'users-list',canActivate:[GuardAuthGuard], component: AllUsersComponent },
   { path: 'model-list', component: ModalComponent },
 
-  { path: 'error404',canActivate:[GuardAuthGuard], component: PagesError404Component },
+  { path: 'error404', component: PagesError404Component },
 
   { 
     path: '**',

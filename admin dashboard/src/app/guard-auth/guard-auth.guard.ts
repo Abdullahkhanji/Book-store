@@ -44,8 +44,8 @@ export class GuardAuthGuard implements CanActivate {
           console.log('no user');
           // this.toastr.error('you are not logging in');
 
-          return resolve(false);
           this.router.navigate(['/pages-login']);
+          return resolve(false);
         }
       });
       ////
