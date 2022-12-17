@@ -31,7 +31,6 @@ import { ChartsApexchartsComponent } from './components/charts-apexcharts/charts
 import { IconsBootstrapComponent } from './components/icons-bootstrap/icons-bootstrap.component';
 import { IconsRemixComponent } from './components/icons-remix/icons-remix.component';
 import { IconsBoxiconsComponent } from './components/icons-boxicons/icons-boxicons.component';
-import { UsersProfileComponent } from './pages/users-profile/users-profile.component';
 import { PagesFaqComponent } from './pages/pages-faq/pages-faq.component';
 import { PagesContactComponent } from './pages/pages-contact/pages-contact.component';
 import { PagesLoginComponent } from './pages/pages-login/pages-login.component';
@@ -42,6 +41,13 @@ import { getAnalytics } from 'firebase/analytics';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AllBooksComponent } from './pages/all-books/all-books.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
+import { GuardAuthGuard } from './guard-auth/guard-auth.guard';
+import { AllUsersComponent } from './pages/all-users/all-users.component';
+import { EditBookComponent } from './pages/edit-book/edit-book.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAaopGUrvPb3W8WiXhnq-PLZl8A65waJIc',
@@ -88,17 +94,26 @@ const analytics = getAnalytics(app);
     IconsBootstrapComponent,
     IconsRemixComponent,
     IconsBoxiconsComponent,
-    UsersProfileComponent,
     PagesFaqComponent,
     PagesContactComponent,
     PagesLoginComponent,
     PagesError404Component,
     PagesBlankComponent,
     AllBooksComponent,
-    AddBookComponent
+    AllUsersComponent,
+    AddBookComponent,
+    EditBookComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [],
+  imports: [
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(), 
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  providers: [GuardAuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

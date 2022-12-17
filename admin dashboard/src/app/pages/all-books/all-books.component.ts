@@ -1,31 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import {
-  doc,
   collection,
   deleteDoc,
+  doc,
   getDocs,
   getFirestore,
 } from 'firebase/firestore';
-import { book } from '../book';
-
+import { getDownloadURL, getStorage, ref } from 'firebase/storage';
 @Component({
   selector: 'app-all-books',
   templateUrl: './all-books.component.html',
   styleUrls: ['./all-books.component.css'],
 })
-
-
 export class AllBooksComponent implements OnInit {
+  data: any;
+  booksList: any = [];
+  bookId: any
 
-
-
-
-  booksList:any[]=[];
-
-  constructor() {}
+  constructor(private elementRef: ElementRef) {}
 
   ngOnInit(): void {
     this.readBooks();
+
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = '../assets/js/main.js';
+    this.elementRef.nativeElement.appendChild(s);
   }
 
   async readBooks() {
@@ -33,21 +33,31 @@ export class AllBooksComponent implements OnInit {
     let snapshot = await getDocs(collection(db, 'books'));
 
     snapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, ' => ', doc.data());
-      let index:any = doc.data()
-      index.key = doc.id
+      let index: any = doc.data();
+      index.key = doc.id;
       this.booksList.push(index);
-      console.log(this.booksList);
+      const storage = getStorage();
+      const storageRef = ref(storage, doc.data()['bookCover']);
+      const fileRef = ref(storage, doc.data()['bookPDF']);
+      getDownloadURL(fileRef).then((url: any) => {
+        index.selectedFile = url;
+      });
+      getDownloadURL(storageRef).then((url) => {
+        console.log(url);
+        index.selectedImage = url;
+      });
+      getDownloadURL(fileRef).then((url) => {
+        index.selectedFile = url;
+      });
+      this.data = index;
     });
   }
-
-  async deleteBook(event:any) {
+  setId(id:any){
+    this.bookId = id
+  }
+  async deleteBook(id: any) {
     let db = getFirestore();
-
-    await deleteDoc(doc(db, 'books', event.key)).then(()=>{
-      this.readBooks()
-    })
+    console.log(id)
+    await deleteDoc(doc(db, 'books', id))
   }
 }
-

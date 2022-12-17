@@ -11,12 +11,19 @@ import { BookPageComponent } from './book-page/book-page.component';
 import { FavoritePageComponent } from './favorite-page/favorite-page.component';
 import { AllBooksComponent } from './all-books/all-books.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { AddBookComponent } from './add-book/add-book.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
+import { RegisterComponent } from './register/register.component';
+import { FileSaverModule } from 'ngx-filesaver';
+import { getFunctions } from 'firebase/functions';
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.prod';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAaopGUrvPb3W8WiXhnq-PLZl8A65waJIc',
@@ -31,8 +38,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
-
+const functions = getFunctions(app);
 
 @NgModule({
   declarations: [
@@ -45,19 +51,24 @@ const analytics = getAnalytics(app);
     FavoritePageComponent,
     AllBooksComponent,
     AddBookComponent,
-    ProfilePageComponent
-
+    ProfilePageComponent,
+    RegisterComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     SwiperModule,
     BrowserAnimationsModule,
     MatMenuModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxDocViewerModule,
+    FileSaverModule,
+    ToastrModule.forRoot(),
+    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

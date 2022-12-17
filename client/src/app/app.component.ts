@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 @Component({
   selector: 'app-root',
@@ -7,27 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bookstore';
-  spinner = true;
-
-  // constructor(){
-  //   setTimeout(() => {this.loader()}, 2000);
-  // }
-
-
-
-
+  spinner = true
   loader () {
     this.spinner = false
-    // const box = document.getElementById('loader-container');
-    // if (box) {
-    //   box.classList.add('active')
-    // }
   }
 
   fadeOut() {
     this.spinner = true
     setTimeout(() => {this.loader()}, 800);
-    console.log(this.spinner)
   }
 
 }

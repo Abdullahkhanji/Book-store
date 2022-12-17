@@ -7,10 +7,13 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginPageComponent },
+  { path: 'register', component: RegisterComponent },
+
   { path: 'favoritePage', component: FavoritePageComponent },
   { path: 'allBooks', component: AllBooksComponent },
   { path: 'profile', component: ProfilePageComponent },
@@ -19,7 +22,7 @@ const routes: Routes = [
   { path: 'addBook', component: AddBookComponent },
   { path: 'bookView/:id', component: BookPageComponent },
 
-  { path: '**', redirectTo: 'home' },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({
