@@ -7,7 +7,7 @@ exports.createNewRoles = functions.firestore
   .onCreate((snap, context) => {
     console.log(snap.data());
     const uid = snap.data().uid;
-    let message = "test"
+    let message = "Welcome to bookly!"
     const additionalClaims = {
       admin: false,
     };
